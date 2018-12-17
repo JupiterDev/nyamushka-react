@@ -1,0 +1,196 @@
+@font-face
+  font-family: Exo2-Thin
+  font-weight: normal
+  font-style: normal
+
+  src: url(./fonts/Exo2.0-Thin.otf)
+  
+@font-face
+  font-family: Trebuchet MS
+  font-weight: normal
+  font-style: normal
+
+  src: url(./fonts/TrebuchetMS.woff)
+
+  /*ПРОЙТИСЬ ПО СТИЛЯМ И ПРОВЕРИТЬ ИХ*/
+
+div
+  -webkit-tap-highlight-color: transparent
+
+body
+  height: 100%
+  margin: 0
+  padding: 0
+
+  background-image: linear-gradient(to top, rgba( 0, 0, 0, .5), transparent 50%, rgba( 0, 0, 0, .5)), url(images/pattern.png)
+
+  font-family: Trebuchet MS, sans-serif
+  font-size: 14px
+  
+.header
+  display: flex
+  justify-content: center
+  &__title
+    margin-top: 41px
+    margin-bottom: 55px
+
+    text-align: center
+
+    color: #ffffff
+
+    font-family: Exo2-Thin, sans-serif
+    font-size: 36px
+    line-height: 1
+
+.content
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  justify-content: space-evenly
+
+.card
+  &__wrap
+    position: relative
+
+    width: 320px
+    height: 480px
+
+    cursor: pointer
+  &__box
+    width: 320px
+    height: 480px
+  &__outer-border
+    fill: #1698D9
+  &__inner-box
+    fill: #F2F2F2
+  &__title
+    position: absolute
+    top: 21px
+    left: 48px
+
+    font-size: 16px
+    &_uncolored
+      color: #666666
+    &_colored
+      color: #e62e7a
+  &__main-title
+    position: absolute
+    top: 45px
+    left: 46px
+
+    font-size: 48px
+    font-weight: bold
+  &__subtitle
+    position: absolute
+    top: 99px
+    left: 48px
+
+    font-size: 24px
+    font-weight: bold
+  &__description
+    position: absolute
+    left: 48px
+
+    color: #666666
+
+    line-height: 1
+    &_first
+
+      top: 143px
+
+      @extend .card__description
+    &_second
+
+      top: 159px
+
+      @extend .card__description
+    &_third
+
+      top: 175px
+
+      @extend .card__description
+    &__number
+      font-weight: bold
+  &__img
+    position: absolute
+    bottom: 4px
+    left: 4px
+
+    border-bottom-left-radius: 8px
+  &__label
+    position: absolute
+    right: 16px
+    bottom: 16px
+
+    width: 80px
+    height: 80px
+
+    border-radius: 50%
+    &__number
+      margin-top: 11px
+
+      text-align: center
+
+      color: #ffffff
+
+      font-size: 42px
+      line-height: 1
+    &__sub
+      margin-top: -2px
+
+      text-align: center
+
+      color: #ffffff
+
+      font-size: 21px
+      line-height: 1
+
+.additive
+  margin: 15px 0 68px 0
+
+  text-align: center
+
+  color: #ffffff
+
+  font-size: 13px
+  line-height: 1
+  &__link
+    display: inline-block
+
+    cursor: pointer
+
+    border-bottom: 1px dashed rgb(22,152,217)
+
+    @extend .additive__dot
+  &-disabled
+
+    height: 14px
+
+    color: #ffff66
+
+    @extend .additive
+  &__dot
+    color: #1698d9
+
+    font-weight: bold
+  &-selected
+
+    height: 14px
+
+    @extend .additive
+
+.card__wrap.card-disabled .card__title, 
+.card__wrap.card-disabled .card__main-title,
+.card__wrap.card-disabled .card__subtitle,
+.card__wrap.card-disabled .card__description_first,
+.card__wrap.card-disabled .card__description_second,
+.card__wrap.card-disabled .card__description_third
+  color: rgba(179, 179, 179, .5)
+.card__wrap.card-disabled .card__label, 
+.card__wrap.card-disabled:hover .card__label
+  background: #b3b3b3
+.card__wrap.card-disabled .outer-border, 
+.card__wrap.card-disabled:hover .outer-border
+  fill: #b3b3b3
+.card__wrap.card-disabled .card__img
+  opacity: 0.5
